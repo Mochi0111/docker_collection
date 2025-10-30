@@ -4,6 +4,10 @@ services:
     build:
       network: host
       context: .
+      args:
+        UID: "${UID:-1000}"
+        GID: "${GID:-1000}"
+    # user: "1000:1000"
     working_dir: /app
     volumes:
       - ./:/app
