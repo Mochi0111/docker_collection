@@ -14,8 +14,18 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
+# ## ホストのUID/GIDでユーザー作成 ※ターミナルに"id"を実行すると確認可能
+ARG UID=1000
+ARG GID=1000
+RUN groupadd -g ${GID} appgroup && \
+    useradd -m -u ${UID} -g ${GID} -s /bin/bash appuser
+
 WORKDIR /cppdev
 
 COPY . .
+
+# # 非rootユーザで実行
+RUN chown -R appuser:appgroup /app
+USER appuser
 
 CMD ["bash"]
