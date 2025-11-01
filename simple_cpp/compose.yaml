@@ -7,9 +7,10 @@ services:
       args:
         UID: "${UID:-1000}"
         GID: "${GID:-1000}"
-    working_dir: /cppdev
+        DIR: "${DIR}"
+    working_dir: /${DIR}
     volumes:
-      - ./:/cppdev
+      - ./:/${DIR}
 
     tty: true
     command: bash
