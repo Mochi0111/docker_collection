@@ -6,9 +6,10 @@
 ”.env"に記載する内容については各ディレクトリのREADMEを参照。<br>
 
 ## 各ディレクトリ説明
---- <br>
+---
 **■ simple_python** <br>
-Python用の基礎環境 <br>
---- <br>
+Python用の基礎環境
+
+---
 **■ simple_cpp** <br>
 C++用の基礎環境
