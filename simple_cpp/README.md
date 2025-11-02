@@ -1,14 +1,10 @@
 ## .envファイル記載内容
 ~~~
-UID=ホストのUID
-GID=ホストのGID
 DIR=/workdir/path/name
 ~~~
 
 **(記述例)**<br>
 ~~~
-UID=1000
-GID=1000
 DIR=app
 ~~~
 
@@ -33,5 +29,5 @@ $ g++ -o <実行ファイル名(任意)> <ソースファイル.cpp> && /<実行
 
 **コマンド例**<br>
 ~~~
-$ g++ -o sample sample.cpp && /sample
+$ g++ -o hello hello.cpp && ./hello
 ~~~
