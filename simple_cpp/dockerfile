@@ -27,7 +27,7 @@ WORKDIR /${DIR}
 COPY . .
 
 # # 非rootユーザで実行
-RUN chown -R appuser:appgroup /app
+RUN chown -R appuser:appgroup /${DIR}
 USER appuser
 
 CMD ["bash"]
