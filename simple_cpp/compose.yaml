@@ -5,8 +5,6 @@ services:
       network: host
       context: .
       args:
-        UID: "${UID:-1000}"
-        GID: "${GID:-1000}"
         DIR: "${DIR}"
     working_dir: /${DIR}
     volumes:
