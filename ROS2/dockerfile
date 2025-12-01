@@ -15,6 +15,15 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
+ENV UV_SYSTEM_PYTHON=true \
+    UV_LINK_MODE=copy
+
+## uvインストール. どの権限でも(システム全体で)uvが使えるように"/usr/local/bin"にコピー
+ADD https://astral.sh/uv/install.sh /uv-installer.sh
+RUN sh /uv-installer.sh && \
+    mv /root/.local/bin/uv /usr/local/bin/ && \
+    rm /uv-installer.sh
+
 ## 任意のディレクトリパス + 作業ディレクトリの所有者を設定
 ARG DIR
 WORKDIR /${DIR}
